@@ -43,8 +43,8 @@ module SimplesIdeias
     # Export translations to JavaScript, considering settings
     # from configuration file
     def export!
-      translation_segments.each do |filename, translations|
-        save(translations, filename)
+      translation_segments.sort.each do |key_value|
+        save(key_value[1], key_value[0])
       end
     end
 
